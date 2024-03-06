@@ -7,7 +7,7 @@ function App() {
 
   const [amount, setAmount] = useState(0)
   const [from, setFrom] = useState("usd")
-  const [to, setTo] = useState("inr")
+  const [to, setTo] = useState("pkr")
   const [converted, setConverted] = useState(0)
 
   const currencyInfo  = useCurrencyInfo(from)
@@ -28,13 +28,13 @@ function App() {
   <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
       style={{
-          backgroundImage: `https://unsplash.com/photos/green-trees-under-white-sky-during-daytime-uyyRJA2an4ohttps://images.unsplash.com/photo-1593696954577-ab3d39317b97?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZyZWUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3Durl('https://www.pexels.com/photo/selective-focus-photography-of-green-bird-1774927/')`,
+          backgroundImage: `url('https://images.pexels.com/photos/18160718/pexels-photo-18160718/free-photo-of-iguana-salvadorena.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
       }}
-  >
-      <div className="w-full">
-          <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
-              <form
-                  onSubmit={(e) => {
+>
+    <div className="w-full">
+        <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+            <form
+                onSubmit={(e) => {
                       e.preventDefault();
                     convert()
                   }}
@@ -44,7 +44,7 @@ function App() {
                           label="From"
                           amount={amount}
                           currencyOption={options}
-                          onCurrencyChange={(currency)=> setAmount(amount)}
+                          onCurrencyChange={(currency)=> setFrom(currency)}
                           onAmountChange={(amount)=>setAmount(amount)}
                           selectCurrency={from}
 
@@ -65,7 +65,7 @@ function App() {
                           amount={converted}
                           currencyOption={options}
                           onCurrencyChange={(currency)=> setTo(currency)}
-                          selectCurrency={from}
+                          selectCurrency={to}
                           
                           amountDIsable 
                           
